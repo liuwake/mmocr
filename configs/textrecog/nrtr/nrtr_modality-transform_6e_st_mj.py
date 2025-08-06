@@ -1,6 +1,6 @@
 _base_ = [
-    '../_base_/datasets/mjsynth.py',
-    '../_base_/datasets/synthtext.py',
+    '../_base_/datasets/mjsynth_lmdb.py',
+    '../_base_/datasets/synthtext_lmdb.py',
     '../_base_/datasets/cute80.py',
     '../_base_/datasets/iiit5k.py',
     '../_base_/datasets/svt.py',
@@ -20,7 +20,7 @@ param_scheduler = [
 ]
 
 # dataset settings
-train_list = [_base_.mjsynth_textrecog_train, _base_.synthtext_textrecog_train]
+train_list = [_base_.mjsynth_lmdb_textrecog_train, _base_.synthtext_lmdb_textrecog_train]
 test_list = [
     _base_.cute80_textrecog_test, _base_.iiit5k_textrecog_test,
     _base_.svt_textrecog_test, _base_.svtp_textrecog_test,

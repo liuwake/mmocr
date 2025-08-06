@@ -24,7 +24,7 @@ model = dict(
         std=[58.395, 57.12, 57.375]))
 
 train_pipeline = [
-    dict(type='LoadImageFromFile', ignore_empty=True, min_size=2),
+    dict(type='LoadImageFromNDArray', ignore_empty=True, min_size=2),
     dict(type='LoadOCRAnnotations', with_text=True),
     dict(
         type='RescaleToHeight',

@@ -20,7 +20,7 @@ model = dict(
 
 train_pipeline = [
     dict(
-        type='LoadImageFromFile',
+        type='LoadImageFromNDArray',
         color_type='grayscale',
         ignore_empty=True,
         min_size=2),
