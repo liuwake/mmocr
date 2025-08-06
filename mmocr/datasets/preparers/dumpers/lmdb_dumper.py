@@ -53,10 +53,12 @@ class TextRecogLMDBDumper(BaseDumper):
         self.verify = verify
 
     def check_image_is_valid(self, imageBin):
-        if imageBin is None:
+        if not imageBin:
             return False
         imageBuf = np.frombuffer(imageBin, dtype=np.uint8)
         img = cv2.imdecode(imageBuf, cv2.IMREAD_GRAYSCALE)
+        if img is None:
+            return False
         imgH, imgW = img.shape[0], img.shape[1]
         if imgH * imgW == 0:
             return False
